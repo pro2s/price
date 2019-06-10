@@ -1,9 +1,9 @@
-import React, { Component } from 'react';
+import React, { Component } from 'react'
 import { connect } from 'react-redux'
 import { addToCart } from './actions/cartActions'
 import ProductFilter from './ProductFilter'
 
-class ProductCard extends Component{
+class ProductCard extends Component {
     complexItems = []
 
     handleClick = (id) => {
@@ -34,9 +34,11 @@ class ProductCard extends Component{
                     <p>{item.desc}</p>
                     <p><b>Price: {item.price}$</b></p>
                 </div>
-                <div className="card-action">
-                    { item.complex ? <ProductFilter onUpdate={this.onUpdate} filter={item.complex.filter} />  : '' }
-                </div>
+                {item.complex &&
+                    <div className="card-action">
+                        <ProductFilter onUpdate={this.onUpdate} filter={item.complex.filter} />  
+                    </div>
+                }
             </div>
         )
     }

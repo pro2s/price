@@ -2,7 +2,7 @@ import React from 'react';
 import { Link } from 'react-router-dom'
 import CartIcon from './CartIcon'
 
-const Navbar = ()=>{
+const Navbar = () => {
     return(
         <nav>
             <div className="nav-wrapper container">
@@ -10,6 +10,7 @@ const Navbar = ()=>{
                 
                 <ul className="right">
                     <li><Link to="/">Shop</Link></li>
+                    <li><Link to="/table">Table</Link></li>
                     <li><Link to="/cart">My cart</Link></li>
                     <li><CartIcon/></li>
                 </ul>

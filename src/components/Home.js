@@ -2,7 +2,7 @@ import React, { PureComponent } from 'react';
 import { connect } from 'react-redux'
 import ProductCard from './ProductCard'
 
- class Home extends PureComponent {
+class Home extends PureComponent {
     render(){
         const { items } = this.props;
         return(

@@ -2,6 +2,7 @@ import React from 'react'
 import {BrowserRouter, Route, Switch} from 'react-router-dom'
 import Navbar from './components/Navbar'
 import Home from './components/Home'
+import Table from './components/Table'
 import Cart from './components/Cart'
 
 function App() {
@@ -11,6 +12,7 @@ function App() {
             <Navbar/>
             <Switch>
                 <Route exact path="/" component={Home}/>
+                <Route exact path="/table" component={Table}/>
                 <Route path="/cart" component={Cart}/>
             </Switch>
         </div>

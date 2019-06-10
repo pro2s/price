@@ -1,16 +1,14 @@
-import React, { PureComponent } from 'react';
+import React, { PureComponent } from 'react'
 import { connect } from 'react-redux'
 
  class ProductFilter extends PureComponent {
     render(){
         const { items, onUpdate, filter } = this.props;
         return(
-            <div className="input-field col s12">
-                <select className="browser-default" defaultValue="" onChange={event => onUpdate(filter.id, event.target.value)} >
-                    <option value="">Choose your option</option>
-                    { items.map(item => <option key={item.id} value={item.id}>{item.title}</option>) }
-                </select>
-            </div>
+            <select className="browser-default" defaultValue="" onChange={event => onUpdate(filter.id, event.target.value)} >
+                <option value="">Choose your option</option>
+                { items.map(item => <option key={item.id} value={item.id}>{item.title}</option>) }
+            </select>
         )
     }
 }
