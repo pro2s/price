@@ -63,3 +63,7 @@ code {
   top: 5px;
   right: -20px;
 }
+
+.btn-small {
+  margin: 0 2px; 
+}

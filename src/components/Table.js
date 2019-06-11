@@ -2,18 +2,15 @@ import React, { PureComponent } from 'react';
 import { connect } from 'react-redux'
 import ProductRow from './ProductRow'
 import TableNavbar from './TableNavbar'
+import { withRouter } from 'react-router-dom'
 
 class Table extends PureComponent {
-    filter = ''
-    onFilter = filter => {
-        this.filter = filter
-    }
-
-    render(){
-        const { items } = this.props;
+    render() {
+        const { items, match } = this.props
+        const filter = match && match.params && match.params.filter
         return(
             <div className="container">
-            <TableNavbar onFilter={this.onFilter}/>
+            <TableNavbar active={filter}/>
             <table>
                 <thead>
                 <tr>
@@ -33,6 +30,16 @@ class Table extends PureComponent {
     }
 }
 
-const mapStateToProps = state => ({ items: state.items })
+const filter = (item, filter) => {
+    console.log(filter)
+    if (filter && filter !== '*') {
+        return filter === item.type
+    }
+    return true
+}
 
-export default connect(mapStateToProps)(Table)
+const mapStateToProps = (state, {match}) => ({ 
+    items: state.items.filter(item => (filter(item, match && match.params && match.params.filter)))
+})
+
+export default withRouter(connect(mapStateToProps)(Table))

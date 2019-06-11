@@ -1,25 +1,21 @@
-import React from 'react';
+import React from 'react'
+import { Link } from 'react-router-dom'
 
-const TableNavbar = (props) => {
-    const { onFilter } = props;
+const TableNavbar = (fiter) => {
     return(
-        <div className="nav-wrapper">
-            <label >
-                <input name="group3" type="radio" defaultChecked onChange={onFilter('*')}/>
-                <span>All</span>
-            </label>
-            <label >
-                <input name="group3" type="radio" onChange={onFilter('shoe')} />
-                <span>Shoe</span>
-            </label>
-            <label >
-                <input name="group3" type="radio" onChange={onFilter('lace')} />
-                <span>Lace</span>
-            </label>
-            <label >
-                <input name="group3" type="radio" onChange={onFilter('isole')} />
-                <span>Isole</span>
-            </label>
+        <div className="section">
+            <Link to="/table" className="waves-effect waves-light btn-small">
+                All
+            </Link> 
+            <Link to="/table/shoe" className="waves-effect waves-light btn-small">
+                Shoe
+            </Link> 
+            <Link to="/table/lace" className="waves-effect waves-light btn-small">
+                Lace
+            </Link> 
+            <Link to="/table/isole" className="waves-effect waves-light btn-small">
+                Isole
+            </Link> 
         </div>
     )
 }
