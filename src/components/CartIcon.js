@@ -14,6 +14,6 @@ class CartIcon extends React.PureComponent {
     }
 }
 
-const mapStateToProps = state => ({ count: state.addedItems.length })
+const mapStateToProps = state => ({ count: state.cart.reduce((c, i) => i.quantity + c, 0) })
 
 export default connect(mapStateToProps)(CartIcon);

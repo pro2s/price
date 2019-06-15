@@ -1,14 +1,23 @@
 import React, { Component } from 'react'
 import { connect } from 'react-redux'
-import { addToCart } from './actions/cartActions'
+import { addItem, removeItem, subtractQuantity, addQuantity } from '../actions/cartActions'
 import ProductFilter from './ProductFilter'
 
-class ProductCard extends Component{
+class ProductRow extends Component {
     complexItems = []
 
-    handleClick = (id) => {
-        this.props.addToCart(id)
+    plus = (item) => {
+        if (item.quantity) {
+            this.props.addQuantity(item.id)
+        } else {
+            this.props.addToCart(item.id)
+        }
+       
         this.complexItems.map(id => this.props.addToCart(id))
+    }
+
+    minus = (item) => {
+        this.props.subtractQuantity(item.id)
     }
 
     onUpdate = (filterId, id) =>  {
@@ -19,7 +28,8 @@ class ProductCard extends Component{
     }
 
     render() {
-        const { item } = this.props;
+        const { item, cartItem } = this.props
+        console.log('update')
         return(
             <tr>
                 <td>{item.title}</td>
@@ -28,10 +38,14 @@ class ProductCard extends Component{
                 <td>
                     { item.complex ? <ProductFilter onUpdate={this.onUpdate} filter={item.complex.filter} />  : '' }
                 </td>
-                <td>
-                    <span className="btn-floating waves-light btn-small" onClick={()=>{this.handleClick(item.id)}}>
-                        <i className="material-icons" >add</i>
-                    </span>
+                <td className="truncate">
+                    <button className="btn-floating waves-light btn-small" onClick={()=>{this.minus(item)}}>
+                        <i className="material-icons" >-</i>
+                    </button>
+                    <span>{cartItem.quantity}</span>
+                    <button className="btn-floating waves-light btn-small" onClick={()=>{this.plus(item)}}>
+                        <i className="material-icons" >+</i>
+                    </button>
                 </td>
             </tr>
         )
@@ -39,7 +53,14 @@ class ProductCard extends Component{
 }
 
 const mapDispatchToProps= (dispatch) => ({   
-    addToCart: (id) => {dispatch(addToCart(id))}
+    addToCart: (id) => {dispatch(addItem(id))},
+    removeItem: (id) => {dispatch(removeItem(id))},
+    subtractQuantity: (id) => {dispatch(subtractQuantity(id))},
+    addQuantity: (id) => {dispatch(addQuantity(id))}
 })
 
-export default connect(null, mapDispatchToProps)(ProductCard)
+const mapStateToProps = (state, props) => ({ 
+    cartItem: state.cart.find(item => item.id === props.item.id) || {quantity: ''} 
+})
+
+export default connect(mapStateToProps, mapDispatchToProps)(ProductRow)

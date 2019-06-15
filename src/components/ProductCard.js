@@ -1,14 +1,14 @@
 import React, { Component } from 'react'
 import { connect } from 'react-redux'
-import { addToCart } from './actions/cartActions'
+import { addItem } from '../actions/cartActions'
 import ProductFilter from './ProductFilter'
 
 class ProductCard extends Component {
     complexItems = []
 
     handleClick = (id) => {
-        this.props.addToCart(id)
-        this.complexItems.map(id => this.props.addToCart(id))
+        this.props.addItem(id)
+        this.complexItems.map(id => this.props.addItem(id))
     }
 
     onUpdate = (filterId, id) =>  {
@@ -45,7 +45,7 @@ class ProductCard extends Component {
 }
 
 const mapDispatchToProps= (dispatch) => ({   
-    addToCart: (id) => {dispatch(addToCart(id))}
+    addItem: (id) => {dispatch(addItem(id))}
 })
 
 export default connect(null, mapDispatchToProps)(ProductCard)

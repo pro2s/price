@@ -31,7 +31,6 @@ class Table extends PureComponent {
 }
 
 const filter = (item, filter) => {
-    console.log(filter)
     if (filter && filter !== '*') {
         return filter === item.type
     }
