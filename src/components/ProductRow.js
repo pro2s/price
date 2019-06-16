@@ -1,9 +1,9 @@
-import React, { Component } from 'react'
+import React, { PureComponent } from 'react'
 import { connect } from 'react-redux'
 import { addItem, removeItem, subtractQuantity, addQuantity } from '../actions/cartActions'
 import ProductFilter from './ProductFilter'
 
-class ProductRow extends Component {
+class ProductRow extends PureComponent {
     complexItems = []
 
     plus = (item) => {
@@ -29,7 +29,6 @@ class ProductRow extends Component {
 
     render() {
         const { item, cartItem } = this.props
-        console.log('update')
         return(
             <tr>
                 <td>{item.title}</td>

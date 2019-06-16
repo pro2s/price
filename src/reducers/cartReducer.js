@@ -4,7 +4,8 @@ import Api from "../api"
 const initState = {
     items: Api.fetchProducts(),
     cart: [],
-    total: 0
+    total: 0,
+    shipping: undefined,
 }
 
 function set(cart, cartItem) {
@@ -83,16 +84,24 @@ const cartReducer = (state = initState, action) => {
     }
 
     if (action.type === ADD_SHIPPING) {
+        if (state.cart.length === 0) {
+            return {...state}
+        }
         return {
             ...state,
-            total: state.total + 6
+            total: state.total + 6,
+            shipping: 6
         }
     }
 
     if (action.type === SUB_SHIPPING) {
+        if (state.cart.length === 0 || state.shipping === undefined) {
+            return {...state}
+        }
         return {
             ...state,
-            total: state.total - 6
+            total: state.total - 6,
+            shipping: undefined
         }
     }
 

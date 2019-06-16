@@ -13,8 +13,8 @@ const TableNavbar = (fiter) => {
             <Link to="/table/lace" className="waves-effect waves-light btn-small">
                 Lace
             </Link> 
-            <Link to="/table/isole" className="waves-effect waves-light btn-small">
-                Isole
+            <Link to="/table/insole" className="waves-effect waves-light btn-small">
+                Insole
             </Link> 
         </div>
     )
