@@ -29,7 +29,9 @@ code {
 
 .card .card-image .card-title {
   color: black;
-  font-weight: 400
+  font-weight: 400;
+  background: linear-gradient(to top, #fff, transparent);
+  padding-bottom: 12px;
 }
 
 .cart {
@@ -66,4 +68,12 @@ code {
 
 .btn-small {
   margin: 0 2px; 
+}
+
+@media only screen and (max-width: 992px) {
+  nav .brand-logo {
+      left: initial;
+      -webkit-transform: initial;
+      transform: initial;
+  }
 }

@@ -6,7 +6,10 @@ const Navbar = () => {
     return(
         <nav>
             <div className="nav-wrapper container">
-                <Link to="/" className="brand-logo">Shopping</Link>
+                <Link to="/" className="brand-logo">
+                    <i className="material-icons">shopping_basket</i>
+                    <span className="hide-on-small-and-down">Shopping</span>
+                </Link>
                 
                 <ul className="right">
                     <li><Link to="/">Shop</Link></li>
