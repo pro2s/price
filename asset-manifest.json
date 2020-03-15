@@ -1,0 +1,26 @@
+{
+  "files": {
+    "main.css": "/price/static/css/main.0a44f458.chunk.css",
+    "main.js": "/price/static/js/main.edfeace1.chunk.js",
+    "main.js.map": "/price/static/js/main.edfeace1.chunk.js.map",
+    "runtime~main.js": "/price/static/js/runtime~main.348d043b.js",
+    "runtime~main.js.map": "/price/static/js/runtime~main.348d043b.js.map",
+    "static/js/2.c249c04a.chunk.js": "/price/static/js/2.c249c04a.chunk.js",
+    "static/js/2.c249c04a.chunk.js.map": "/price/static/js/2.c249c04a.chunk.js.map",
+    "index.html": "/price/index.html",
+    "precache-manifest.cf1de83987b73f3ba3d3d4ac370956ab.js": "/price/precache-manifest.cf1de83987b73f3ba3d3d4ac370956ab.js",
+    "service-worker.js": "/price/service-worker.js",
+    "static/css/main.0a44f458.chunk.css.map": "/price/static/css/main.0a44f458.chunk.css.map",
+    "static/media/item1.jpg": "/price/static/media/item1.6c426583.jpg",
+    "static/media/item2.jpg": "/price/static/media/item2.8779dd15.jpg",
+    "static/media/item3.jpg": "/price/static/media/item3.9bd2546f.jpg",
+    "static/media/item4.jpg": "/price/static/media/item4.65bc33d7.jpg",
+    "static/media/item6.jpg": "/price/static/media/item6.f5fd97b5.jpg",
+    "static/media/shoeinsoles-1.jpg": "/price/static/media/shoeinsoles-1.ad508607.jpg",
+    "static/media/shoeinsoles-2.jpg": "/price/static/media/shoeinsoles-2.1128701a.jpg",
+    "static/media/shoeinsoles-3.jpg": "/price/static/media/shoeinsoles-3.f93942d3.jpg",
+    "static/media/shoelaces-1.jpg": "/price/static/media/shoelaces-1.e44b21ec.jpg",
+    "static/media/shoelaces-2.jpg": "/price/static/media/shoelaces-2.506fdc45.jpg",
+    "static/media/shoelaces-3.jpg": "/price/static/media/shoelaces-3.ecaa975a.jpg"
+  }
+}
